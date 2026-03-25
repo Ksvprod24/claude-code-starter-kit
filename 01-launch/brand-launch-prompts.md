@@ -2,6 +2,14 @@
 
 Pipeline complet pour creer et lancer une marque de zero. Chaque prompt elimine toutes les options sauf une.
 
+```
+Pipeline sequentiel :
+Prompt 01 (Naming) → Prompt 02 (Positionnement) → Prompt 03 (Identite visuelle)
+  → Prompt 04 (Voix) → Prompt 05 (Tagline) → Prompt 06 (Landing page)
+  → Prompt 07 (Plan J-14 a J+7) → Prompt 08 (Posts) → Prompt 09 (Emails)
+  → Prompt 10 (Brand story)
+```
+
 ---
 
 ## Prompt 01 — Naming (trouver le nom parfait)
@@ -39,9 +47,15 @@ TACHE : Ecris UNE phrase de positionnement de max 15 mots qui :
 - Dit en quoi c'est different
 Donne 3 versions, score chacune, recommande la meilleure.
 
+EXEMPLE OUTPUT :
+1. "[PHRASE_15_MOTS]" — Clarte: 9/10 — Differenciation: 8/10
+2. "[PHRASE_15_MOTS]" — Clarte: 7/10 — Differenciation: 9/10
+3. "[PHRASE_15_MOTS]" — Clarte: 8/10 — Differenciation: 7/10
+>> RECOMMANDATION : Version 1 car [raison]
+
 CONTRAINTES : Max 15 mots. Pas de jargon. Un enfant de 10 ans doit comprendre.
 CRITERES DE SUCCES : La phrase tient sur une bio Instagram/LinkedIn.
-UTILISATION : Réécrire tous mes profils et ma page d'accueil.
+UTILISATION : Reecrire tous mes profils et ma page d'accueil.
 ```
 
 ---
@@ -219,3 +233,11 @@ UTILISATION : Page A Propos + LinkedIn + presentations.
 - `[BUDGET]` — budget marketing disponible
 - `[DATE]` — date de lancement prevue
 - `[CANAUX]` — reseaux sociaux / canaux disponibles
+
+## Ponts avec les autres piliers
+
+- Prompt 02 (Positionnement) → alimente 04-grow/acquisition Prompt 02 (Cold Email) et Prompt 03 (LinkedIn)
+- Prompt 03 (Identite visuelle) → alimente 02-build pour le design system du site
+- Prompt 04 (Voix) → alimente 04-grow/content pour le ton des posts Instagram et faceless
+- Prompt 06 (Landing page) → alimente 04-grow/acquisition Prompt 05 (Page de vente)
+- Prompt 10 (Brand story) → alimente 05-scale Prompt 10 (Pitch investisseur)

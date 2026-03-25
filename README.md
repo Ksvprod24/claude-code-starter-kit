@@ -1,7 +1,7 @@
 # Claude Code Starter Kit v2
 
 Kit complet pour entrepreneurs et freelances qui utilisent Claude Code.
-5 piliers, 42+ prompts, battle-tested sur 11+ projets reels.
+5 piliers, 43+ prompts, battle-tested sur 11+ projets reels.
 
 ```
 LAUNCH → BUILD → PROTECT → GROW → SCALE
@@ -25,7 +25,7 @@ LAUNCH → BUILD → PROTECT → GROW → SCALE
 
 ### 03-protect/ — Securiser au maximum
 
-- **10 prompts d'audit** — OWASP Top 10, auth, API, Stripe, secrets, RGPD, serveur, incident
+- **11 prompts d'audit** — OWASP Top 10, auth, API, Stripe, Supabase RLS, secrets, RGPD, serveur, incident, score global
 - **Guide pentesting** — Comment engager des hackers ethiques (freelance → plateforme → bug bounty)
 - **Checklist** — 40+ points a verifier avant chaque mise en production
 
@@ -90,7 +90,7 @@ claude-code-starter-kit/
 │       └── dark-light-toggle.md       # Template dark/light mode
 ├── 03-protect/
 │   ├── audit-prompts/
-│   │   └── security-audit-prompts.md  # 10 prompts audit securite
+│   │   └── security-audit-prompts.md  # 11 prompts audit securite
 │   ├── pentesting-guide/
 │   │   └── pentesting-guide.md        # Guide complet pentesting
 │   └── checklists/

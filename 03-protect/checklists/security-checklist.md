@@ -25,12 +25,21 @@ A verifier systematiquement avant chaque deploy. Cocher chaque point.
 - [ ] Erreurs sans info sensible (pas de stack trace en prod)
 - [ ] Headers securite (X-Frame-Options, CSP, HSTS)
 
-## Donnees
+## Supabase RLS
+- [ ] RLS active sur toutes les tables
+- [ ] Chaque table a des policies SELECT/INSERT/UPDATE/DELETE
+- [ ] Impossible de lire les donnees d'un autre utilisateur
+- [ ] Le role anon n'accede pas aux donnees sensibles
+- [ ] service_role utilise uniquement cote serveur
+
+## Donnees et secrets
 - [ ] Zero secret dans le code source (grep verifie)
+- [ ] Zero secret dans l'historique git (TruffleHog/GitLeaks verifie)
 - [ ] .env dans .gitignore
 - [ ] Variables NEXT_PUBLIC_* ne contiennent pas de secrets
 - [ ] Donnees sensibles chiffrees en base
 - [ ] Backup automatique active et teste
+- [ ] security.txt present sur le site (/.well-known/security.txt)
 
 ## Paiements (Stripe)
 - [ ] Prix calcule cote serveur uniquement

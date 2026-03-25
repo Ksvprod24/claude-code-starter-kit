@@ -1,4 +1,4 @@
-# Securite — 10 prompts d'audit
+# Securite — 11 prompts d'audit
 
 Prompts pour auditer et securiser n'importe quel projet web. Adaptes pour Next.js + Supabase + Stripe mais fonctionnent avec tout stack.
 
@@ -122,7 +122,31 @@ UTILISATION : Audit avant de passer en mode live Stripe.
 
 ---
 
-## Prompt 06 — Audit variables d'environnement et secrets
+## Prompt 06 — Audit Supabase RLS (Row Level Security)
+
+```
+CONTEXTE : Mon app utilise Supabase avec les tables suivantes : [LISTE_TABLES].
+Roles : [ROLES] (ex: authenticated, anon, service_role).
+
+TACHE : Verifie pour chaque table :
+1. RLS est-il active ? (pas desactive par defaut)
+2. Les policies existent-elles pour SELECT, INSERT, UPDATE, DELETE ?
+3. Un utilisateur authentifie peut-il lire les donnees d'un autre utilisateur ?
+4. Le role anon a-t-il acces a des donnees sensibles ?
+5. Les policies utilisent-elles auth.uid() pour filtrer ?
+6. Y a-t-il des tables sans aucune policy (= acces total) ?
+7. Le service_role est-il utilise uniquement cote serveur ?
+
+Pour chaque table : policy actuelle + test SQL a executer + fix si vulnerable.
+
+CONTRAINTES : Tester avec un vrai token JWT d'un user A sur les donnees d'un user B.
+CRITERES DE SUCCES : Impossible d'acceder aux donnees d'un autre utilisateur.
+UTILISATION : Audit obligatoire avant chaque ajout de table.
+```
+
+---
+
+## Prompt 07 — Audit variables d'environnement et secrets
 
 ```
 CONTEXTE : Mon projet est dans [CHEMIN]. Il utilise [.env / .env.local / Vercel env / Hostinger].
@@ -142,7 +166,7 @@ UTILISATION : A faire une fois + avant chaque nouveau deploy.
 
 ---
 
-## Prompt 07 — Audit RGPD / vie privee
+## Prompt 08 — Audit RGPD / vie privee
 
 ```
 CONTEXTE : Mon app collecte [TYPES_DONNEES] (email, nom, adresse, paiement...).
@@ -164,7 +188,7 @@ UTILISATION : Audit legal avant lancement + revue annuelle.
 
 ---
 
-## Prompt 08 — Hardening serveur / hebergement
+## Prompt 09 — Hardening serveur / hebergement
 
 ```
 CONTEXTE : Mon site est heberge sur [HOSTINGER/VERCEL/VPS].
@@ -188,7 +212,7 @@ UTILISATION : Audit apres chaque migration ou changement d'hebergeur.
 
 ---
 
-## Prompt 09 — Plan de reponse incident
+## Prompt 10 — Plan de reponse incident
 
 ```
 CONTEXTE : Je suis entrepreneur solo. Je gere [X] sites/apps en production.
@@ -210,7 +234,7 @@ UTILISATION : Document a imprimer + sauvegarder hors-ligne.
 
 ---
 
-## Prompt 10 — Score securite global
+## Prompt 11 — Score securite global
 
 ```
 CONTEXTE : Mon projet est [NOM]. Stack : [STACK]. Hebergeur : [HOST].
