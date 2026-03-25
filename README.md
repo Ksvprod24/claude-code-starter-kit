@@ -1,63 +1,68 @@
-# Claude Code Starter Kit
+# Claude Code Starter Kit v2
 
-Kit complet pour transformer Claude Code en machine de guerre : skills, prompts experts, templates, et configuration optimisee.
+Kit complet pour entrepreneurs et freelances qui utilisent Claude Code.
+5 piliers, 42+ prompts, battle-tested sur 11+ projets reels.
 
-## Ce que contient ce repo
+```
+LAUNCH → BUILD → PROTECT → GROW → SCALE
+  ↑                                  |
+  └──────────────────────────────────┘
+```
 
-### Prompts experts (3 packs)
+---
 
-| Pack | Fichier | Description |
-|------|---------|-------------|
-| **Business** | `prompts/business/meta-prompts-consultant.md` | 10 meta-prompts structures comme un consultant BCG — diagnostic croissance, audit prix, positionnement, SWOT, segmentation clients, simulation financiere, acquisition, audit ops, roadmap 90j, pitch investisseur |
-| **Instagram** | `prompts/instagram/workflow-complet.md` | Pipeline 5 etapes : audit compte > calendrier 30j > accroches stop-scroll > rewriting storytelling > idees virales |
-| **Faceless Video** | `prompts/faceless-video/pipeline-court-format.md` | Pipeline 7 prompts chaines pour contenu court format sans visage : niche > topic > idee > angle > hook > script > draft final. Decision forcee a chaque etape |
+## Les 5 piliers
 
-### Template
+### 01-launch/ — Creer et lancer une marque
 
-| Template | Fichier | Description |
-|----------|---------|-------------|
-| **Dark/Light Toggle** | `templates/dark-light-toggle.md` | Composant dark/light mode complet (Next.js + Tailwind + HTML pur) avec auto-detection jour/nuit, palette de classes, et composants prets a l'emploi |
+10 prompts sequentiels : naming → positionnement → identite visuelle → voix de marque → tagline → landing page → plan de lancement J-14 a J+7 → posts reseaux → emails de lancement → brand story.
 
-### Configuration Claude Code
+### 02-build/ — Configurer Claude Code + developper
 
-| Fichier | Description |
-|---------|-------------|
-| `CLAUDE.md` | Configuration de reference — principes agents, structure meta-prompt, workflow GSD, skills |
-| `skills-install.md` | Guide d'installation des 15 skills + GSD |
+- **CLAUDE.md** de reference — principes agents, structure meta-prompt, techniques avancees
+- **Guide skills** — Installation des 15 skills (Superpowers + UI/UX Pro Max + GSD)
+- **Templates** — Composants reutilisables (dark/light mode)
+
+### 03-protect/ — Securiser au maximum
+
+- **10 prompts d'audit** — OWASP Top 10, auth, API, Stripe, secrets, RGPD, serveur, incident
+- **Guide pentesting** — Comment engager des hackers ethiques (freelance → plateforme → bug bounty)
+- **Checklist** — 40+ points a verifier avant chaque mise en production
+
+### 04-grow/ — Acquerir des clients + creer du contenu
+
+- **10 prompts acquisition** — ICP, cold email, LinkedIn, lead magnet, page de vente, objections, parrainage, SEO, onboarding, retention
+- **5 prompts Instagram** — Audit → calendrier 30j → accroches → storytelling → viral
+- **7 prompts Faceless Video** — Pipeline decision forcee : niche → topic → idea → angle → hook → script → draft
+
+### 05-scale/ — Strategie business
+
+10 meta-prompts BCG : diagnostic croissance, audit prix, positionnement, segmentation clients, SWOT chiffre, simulation financiere, canal d'acquisition, audit ops, roadmap 90j, pitch investisseur.
+
+---
 
 ## Installation rapide
 
-### 1. Copier les prompts
-
 ```bash
-# Creer le dossier prompts dans ta config Claude
-mkdir -p ~/.claude/prompts/{instagram,business,faceless-video}
-mkdir -p ~/.claude/templates
+# Cloner
+git clone https://github.com/Ksvprod24/claude-code-starter-kit.git
+cd claude-code-starter-kit
 
-# Copier les fichiers
-cp prompts/instagram/* ~/.claude/prompts/instagram/
-cp prompts/business/* ~/.claude/prompts/business/
-cp prompts/faceless-video/* ~/.claude/prompts/faceless-video/
-cp templates/* ~/.claude/templates/
+# Copier la config Claude Code
+cp 02-build/claude-config/CLAUDE.md ~/.claude/CLAUDE.md
+
+# Installer les skills (voir le guide)
+cat 02-build/skills-guide/skills-install.md
 ```
-
-### 2. Installer les skills et GSD
-
-Suis le guide dans `skills-install.md`.
-
-### 3. Configurer CLAUDE.md
-
-Copie `CLAUDE.md` dans `~/.claude/CLAUDE.md` et adapte-le a ton profil.
 
 ## Comment utiliser les prompts
 
-Chaque pack de prompts est un pipeline : le resultat du prompt N sert d'input au prompt N+1.
+1. Ouvre le fichier du pilier qui t'interesse
+2. Remplace les variables entre crochets `[VARIABLE]` par tes infos
+3. Envoie chaque prompt a Claude dans l'ordre
+4. Le resultat du prompt N sert d'input au prompt N+1
 
-**Business** — Ouvre le fichier, remplace les variables entre crochets `[ROLE]`, `[SECTEUR]`, `[CA]` etc. par tes infos, et envoie chaque prompt a Claude dans l'ordre.
-
-**Instagram** — Meme principe. Variables : `[NICHE]`, `[CLIENT_IDEAL]`, `[PRODUIT]`.
-
-**Faceless Video** — Lance le prompt 1, recupere le resultat, injecte-le dans le prompt 2, etc. Chaque etape elimine toutes les options sauf une.
+**Principe cle :** chaque prompt force UNE decision. Pas de listes de 10 options. Pas de "ca depend". Une seule recommandation actionnnable.
 
 ## Structure meta-prompt (pour creer tes propres prompts)
 
@@ -65,19 +70,51 @@ Chaque pack de prompts est un pipeline : le resultat du prompt N sert d'input au
 CONTEXTE       — qui je suis, secteur, chiffres cles
 TACHE          — ce que le prompt doit produire
 EXEMPLE OUTPUT — exemple formate du resultat attendu
-CONTRAINTES    — ce qui est interdit (reponses vagues, generalites, "ca depend")
+CONTRAINTES    — ce qui est interdit (reponses vagues, generalites)
 CRITERES       — comment savoir si la reponse est bonne
 UTILISATION    — l'action concrete declenchee par le resultat
 ```
 
-Cette structure force l'IA a donner des reponses actionnables, pas du blabla.
+## Arborescence
+
+```
+claude-code-starter-kit/
+├── 01-launch/
+│   └── brand-launch-prompts.md        # 10 prompts lancement marque
+├── 02-build/
+│   ├── claude-config/
+│   │   └── CLAUDE.md                  # Config de reference
+│   ├── skills-guide/
+│   │   └── skills-install.md          # Guide installation 15 skills + GSD
+│   └── templates/
+│       └── dark-light-toggle.md       # Template dark/light mode
+├── 03-protect/
+│   ├── audit-prompts/
+│   │   └── security-audit-prompts.md  # 10 prompts audit securite
+│   ├── pentesting-guide/
+│   │   └── pentesting-guide.md        # Guide complet pentesting
+│   └── checklists/
+│       └── security-checklist.md      # 40+ points pre-deploy
+├── 04-grow/
+│   ├── acquisition/
+│   │   └── acquisition-prompts.md     # 10 prompts acquisition
+│   └── content/
+│       ├── instagram/
+│       │   └── workflow-complet.md    # 5 prompts Instagram
+│       └── faceless-video/
+│           └── pipeline-court-format.md # 7 prompts faceless
+├── 05-scale/
+│   └── business-strategy-prompts.md   # 10 meta-prompts BCG
+└── README.md
+```
 
 ## Liens utiles
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) — Documentation officielle
-- [Superpowers Skills](https://github.com/jessesquires/claude-code-superpowers) — Skills workflow par Jesse Vincent
-- [GSD (Get Shit Done)](https://github.com/gsd-framework/gsd) — Framework projet complet
+- [Superpowers Skills](https://github.com/jessesquires/claude-code-superpowers) — Skills workflow
+- [GSD](https://github.com/gsd-framework/gsd) — Framework projet complet
+- [UI/UX Pro Max](https://github.com/pimmsaas/ui-ux-pro-max) — Intelligence design
 
 ---
 
-Made with Claude Code.
+Cree par [@Ksvprod24](https://github.com/Ksvprod24) — battle-tested sur 11+ projets.

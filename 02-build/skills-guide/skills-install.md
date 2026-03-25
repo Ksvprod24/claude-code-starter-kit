@@ -54,7 +54,7 @@ rm -rf /tmp/superpowers
 git clone https://github.com/pimmsaas/ui-ux-pro-max.git ~/.claude/skills/ui-ux-pro-max
 ```
 
-Base de donnees : 67 styles, 161 palettes, 57 typographies, 99 guidelines UX, 13 stacks (React, Next.js, Vue, Svelte, Flutter...).
+Base de donnees : 67 styles, 161 palettes, 57 typographies, 99 guidelines UX, 13 stacks.
 
 ### Utilisation
 
@@ -106,11 +106,3 @@ claude /gsd:update
 ## 4. Configuration recommandee
 
 Copie le `CLAUDE.md` de ce repo dans `~/.claude/CLAUDE.md` pour avoir tous les principes agents actives.
-
-### Principes cles
-
-- **50% contexte cible** — ne jamais depasser 70%, relancer dans nouveau contexte
-- **Vertical slices** — feature complete par plan, jamais layer by layer
-- **Iron Law verification** — jamais dire "c'est fait" sans preuve
-- **Iron Law TDD** — jamais de code prod sans test en echec d'abord
-- **Iron Law debugging** — jamais de fix sans root cause investigation

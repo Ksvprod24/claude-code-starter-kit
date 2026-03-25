@@ -1,5 +1,9 @@
 # CLAUDE.md — Configuration de reference
 
+Copier dans `~/.claude/CLAUDE.md` et adapter a ton profil.
+
+---
+
 ## Structure meta-prompt (appliquer pour tout prompt complexe)
 
 ```
@@ -21,9 +25,12 @@ Dossier : `~/.claude/templates/`
 ## Prompts experts
 
 Dossier : `~/.claude/prompts/`
-- `instagram/workflow-complet.md` — Pipeline 5 etapes croissance Instagram
-- `business/meta-prompts-consultant.md` — 10 meta-prompts BCG (audit, pricing, positionnement, roadmap, pitch)
-- `faceless-video/pipeline-court-format.md` — 7 prompts chaines contenu court format sans visage
+- `launch/brand-launch-prompts.md` — 10 prompts lancement de marque
+- `grow/acquisition-prompts.md` — 10 prompts acquisition clients
+- `grow/instagram/workflow-complet.md` — Pipeline 5 etapes croissance Instagram
+- `grow/faceless-video/pipeline-court-format.md` — 7 prompts chaines contenu court format
+- `scale/business-strategy-prompts.md` — 10 meta-prompts BCG
+- `protect/security-audit-prompts.md` — 10 prompts audit securite
 
 Pour utiliser : lire le fichier prompt et appliquer la structure au contexte du projet.
 
