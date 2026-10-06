@@ -20,7 +20,7 @@ LAUNCH → BUILD → PROTECT → GROW → SCALE
 ### 02-build/ — Configurer Claude Code + developper
 
 - **CLAUDE.md** de reference — principes agents, structure meta-prompt, techniques avancees
-- **Guide skills** — Installation des 15 skills (Superpowers + UI/UX Pro Max + GSD)
+- **Guide skills** — Installation de Superpowers (14 skills), UI/UX Pro Max et GSD depuis leurs sources officielles, avec le cout en tokens de chacun
 - **Templates** — Composants reutilisables (dark/light mode)
 
 ### 03-protect/ — Securiser au maximum
@@ -48,12 +48,22 @@ LAUNCH → BUILD → PROTECT → GROW → SCALE
 git clone https://github.com/Ksvprod24/claude-code-starter-kit.git
 cd claude-code-starter-kit
 
-# Copier la config Claude Code
+# Sauvegarder ton CLAUDE.md actuel s'il existe, puis copier la config + les prompts
+[ -f ~/.claude/CLAUDE.md ] && cp ~/.claude/CLAUDE.md ~/.claude/CLAUDE.md.bak-$(date +%F)
 cp 02-build/claude-config/CLAUDE.md ~/.claude/CLAUDE.md
+mkdir -p ~/.claude/templates ~/.claude/prompts
+cp 02-build/templates/dark-light-toggle.md ~/.claude/templates/
+cp -r 01-launch 03-protect 04-grow 05-scale ~/.claude/prompts/
 
-# Installer les skills (voir le guide)
+# Installer les skills (lire le guide : sources officielles + cout en tokens selon ton abonnement)
 cat 02-build/skills-guide/skills-install.md
 ```
+
+Puis ouvre `~/.claude/CLAUDE.md` et remplis les sections « Qui je suis » et « Abonnement ».
+
+## Abonnement Pro ou Max ?
+
+Le kit marche avec les deux. Sur **Pro** (Sonnet, quota 5 h) : les prompts des piliers 01/03/04/05 et `/gsd:quick` suffisent largement. GSD complet et les sous-agents en parallele sont pour **Max**. Le guide skills detaille le cout de chaque outil.
 
 ## Comment utiliser les prompts
 
@@ -111,9 +121,9 @@ claude-code-starter-kit/
 ## Liens utiles
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) — Documentation officielle
-- [Superpowers Skills](https://github.com/jessesquires/claude-code-superpowers) — Skills workflow
-- [GSD](https://github.com/gsd-framework/gsd) — Framework projet complet
-- [UI/UX Pro Max](https://github.com/pimmsaas/ui-ux-pro-max) — Intelligence design
+- [Superpowers Skills](https://github.com/obra/superpowers) — Skills workflow
+- [GSD](https://github.com/gsd-build/get-shit-done) — Framework projet complet
+- [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — Intelligence design
 
 ---
 
