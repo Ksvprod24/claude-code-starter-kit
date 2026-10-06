@@ -15,7 +15,7 @@ Ce fichier est lu par Claude au debut de chaque session. Plus il est long, plus 
 ## Abonnement et budget tokens
 
 <!-- Garde la ligne qui te correspond, supprime l'autre. -->
-- Abonnement **Pro** (Sonnet) : pas de sous-agents en parallele sauf si je le demande, prefere `/gsd:quick` et `/gsd:fast` au workflow GSD complet, propose `/compact` quand le contexte depasse 50 %.
+- Abonnement **Pro** (Sonnet) : pas de sous-agents en parallele sauf si je le demande, prefere `/gsd-quick` et `/gsd-fast` au workflow GSD complet, propose `/compact` quand le contexte depasse 50 %.
 - Abonnement **Max** : sous-agents autorises quand la tache est vraiment parallele.
 
 ---

@@ -63,7 +63,7 @@ Puis ouvre `~/.claude/CLAUDE.md` et remplis les sections « Qui je suis » et «
 
 ## Abonnement Pro ou Max ?
 
-Le kit marche avec les deux. Sur **Pro** (Sonnet, quota 5 h) : les prompts des piliers 01/03/04/05 et `/gsd:quick` suffisent largement. GSD complet et les sous-agents en parallele sont pour **Max**. Le guide skills detaille le cout de chaque outil.
+Le kit marche avec les deux. Sur **Pro** (Sonnet, quota 5 h) : les prompts des piliers 01/03/04/05 et `/gsd-quick` suffisent largement. GSD complet et les sous-agents en parallele sont pour **Max**. Le guide skills detaille le cout de chaque outil.
 
 ## Comment utiliser les prompts
 
@@ -122,7 +122,7 @@ claude-code-starter-kit/
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) — Documentation officielle
 - [Superpowers Skills](https://github.com/obra/superpowers) — Skills workflow
-- [GSD](https://github.com/gsd-build/get-shit-done) — Framework projet complet
+- [GSD](https://github.com/open-gsd/gsd-core) — Framework projet complet
 - [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — Intelligence design
 
 ---

@@ -4,8 +4,8 @@
 
 | Abonnement | Modele par defaut | Ce que tu peux faire confortablement |
 |---|---|---|
-| **Pro** (~20 €/mois) | Sonnet, quota de 5 h glissantes | Prompts des piliers 01/03/04/05, skills simples, `/gsd:quick` et `/gsd:fast` |
-| **Max** | Opus + Sonnet, quota 5x a 20x | Tout, y compris `/gsd:new-project` et les sous-agents en parallele |
+| **Pro** (~20 €/mois) | Sonnet, quota de 5 h glissantes | Prompts des piliers 01/03/04/05, skills simples, `/gsd-quick` et `/gsd-fast` |
+| **Max** | Opus + Sonnet, quota 5x a 20x | Tout, y compris `/gsd-new-project` et les sous-agents en parallele |
 
 Regles si tu es sur **Pro** :
 - Commence par les prompts (un message = un resultat), pas par GSD complet.
@@ -90,19 +90,19 @@ Le skill s'active tout seul des que tu demandes du design ("fais-moi une landing
 
 ---
 
-## 3. GSD (Get Shit Done) — Framework projet complet
+## 3. GSD Core (Get Shit Done) — Framework projet complet
 
-57 commandes slash, 18 agents specialises, hooks de suivi du contexte.
+Une centaine de commandes slash `/gsd-...`, agents specialises, hooks de suivi du contexte et de securite.
 
-**Sur Pro, GSD est le plus gros consommateur de tokens de ce kit.** `/gsd:new-project` lance 4 agents de recherche en parallele. Commence par `/gsd:quick` et `/gsd:fast`, passe au workflow complet quand tu auras vu ce que ca coute.
+**Sur Pro, GSD est le plus gros consommateur de tokens de ce kit.** `/gsd-new-project` lance 4 agents de recherche en parallele. Commence par `/gsd-quick` et `/gsd-fast`, passe au workflow complet quand tu auras vu ce que ca coute.
 
 ### Installation (terminal)
 
 ```bash
-npx get-shit-done-cc@latest --global
+npx @opengsd/gsd-core@latest --global --claude
 ```
 
-Source officielle : https://github.com/gsd-build/get-shit-done (paquet npm `get-shit-done-cc`).
+Source officielle : https://github.com/open-gsd/gsd-core (paquet npm `@opengsd/gsd-core`). Attention : l'ancien paquet `get-shit-done-cc` est abandonne, ne l'installe pas.
 
 Apres chaque mise a jour de GSD, ouvre `~/.claude/settings.json` et verifie que les hooks ajoutes te conviennent (l'installeur peut en rebrancher).
 
@@ -110,17 +110,19 @@ Apres chaque mise a jour de GSD, ouvre `~/.claude/settings.json` et verifie que 
 
 ```bash
 # Taches rapides (commence ici)
-/gsd:fast "description"   # Trivial, inline, pas de sous-agent
-/gsd:quick "description"  # Tache ad-hoc avec commit atomique
-/gsd:debug "symptome"     # Debug methodique
+/gsd-fast "description"   # Trivial, inline, pas de sous-agent
+/gsd-quick "description"  # Tache ad-hoc avec commit atomique
+/gsd-debug "symptome"     # Debug methodique
 
 # Workflow complet (Max, ou Pro avec un quota frais)
-/gsd:new-project
-/gsd:discuss-phase 1    # Capture preferences
-/gsd:plan-phase 1       # Plan detaille
-/gsd:execute-phase 1    # Execution atomique
-/gsd:verify-work 1      # Verification
-/gsd:ship               # PR + livraison
+/gsd-new-project        # projet neuf
+/gsd-onboard            # code existant
+/gsd-discuss-phase 1    # Capture preferences
+/gsd-plan-phase 1       # Plan detaille
+/gsd-execute-phase 1    # Execution atomique
+/gsd-verify-work 1      # Verification
+/gsd-ship               # PR + livraison
+/gsd-next               # perdu ? il te dit quoi faire ensuite
 ```
 
 ---
@@ -145,6 +147,6 @@ cp -r 01-launch 03-protect 04-grow 05-scale ~/.claude/prompts/
 Dans Claude Code :
 ```
 /skills        # doit lister superpowers + ui-ux-pro-max
-/gsd:help      # doit afficher l'aide GSD
+/gsd-help      # doit afficher l'aide GSD Core
 /usage         # ton quota restant
 ```
